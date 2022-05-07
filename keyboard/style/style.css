@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-family: 'Roboto Flex', sans-serif;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=style.css.map */
