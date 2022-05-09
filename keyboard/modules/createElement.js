@@ -21,53 +21,64 @@ export function generationElem() {
     })();
     document.querySelector("body").appendChild(wrapper);
 
-    let placeBtn = Array.from(document.querySelectorAll(".keyboardRow"));
-    let btn;
+    let placeKey = Array.from(document.querySelectorAll(".keyboardRow"));
+    let arrow = Array.from(document.querySelectorAll(".arrow"));
+    let key;
+    let span;
     (function() {
         for(let i = 0; i < 14; i++) {
-            btn = document.createElement("div");
-            btn.classList.add("btn");
-            if(i === 13) btn.classList.add("specBtn"), btn.classList.add("backspace"), btn.innerHTML = "Backspace";
-            placeBtn[0].appendChild(btn);
+            key = document.createElement("div");
+            key.classList.add("key");
+            span = document.createElement("span");
+            if(i === 13) key.classList.add("specKey"), key.classList.add("backspace"), key.innerHTML = "Backspace";
+            placeKey[0].appendChild(key);
+            key.appendChild(span);
         }
         for(let i = 0; i < 15; i++) {
-            btn = document.createElement("div");
-            btn.classList.add("btn");
-            if(i === 0 || i === 14) btn.classList.add("specBtn");
-            if(i === 0) btn.classList.add("tab"), btn.classList.add("specBtn"), btn.innerHTML = "Tab";
-            if(i === 14) btn.classList.add("del"), btn.innerHTML = "Del";
-            placeBtn[1].appendChild(btn);
+            key = document.createElement("div");
+            key.classList.add("key");
+            span = document.createElement("span");
+            if(i === 0 || i === 14) key.classList.add("specKey");
+            if(i === 0) key.classList.add("tab"), key.classList.add("specKey"), key.innerHTML = "Tab";
+            if(i === 14) key.classList.add("del"), key.innerHTML = "Del";
+            placeKey[1].appendChild(key);
+            key.appendChild(span);
         }
         for(let i = 0; i < 13; i++) {
-            btn = document.createElement("div");
-            btn.classList.add("btn");
-            if(i === 0 || i === 12) btn.classList.add("specBtn");
-            if(i === 0) btn.classList.add("capsL"), btn.innerHTML = "CapsLook";
-            if(i === 12) btn.classList.add("enter"), btn.innerHTML = "Enter";
-            placeBtn[2].appendChild(btn);
+            key = document.createElement("div");
+            key.classList.add("key");
+            span = document.createElement("span");
+            if(i === 0 || i === 12) key.classList.add("specKey");
+            if(i === 0) key.classList.add("capsL"), key.innerHTML = "CapsLook";
+            if(i === 12) key.classList.add("enter"), key.innerHTML = "Enter";
+            placeKey[2].appendChild(key);
+            key.appendChild(span);
         }
         for(let i = 0; i < 13; i++) {
-            btn = document.createElement("div");
-            btn.classList.add("btn");
-            if(i === 0 || i === 11 || i === 12) btn.classList.add("specBtn");
-            if(i === 0 || i === 12) btn.classList.add("shift"), btn.innerHTML = "Shift";
-            placeBtn[3].appendChild(btn);
+            key = document.createElement("div");
+            key.classList.add("key");
+            span = document.createElement("span");
+            if(i === 0 || i === 11 || i === 12) key.classList.add("specKey");
+            if(i === 11) key.classList.add("arrow");
+            if(i === 0 || i === 12) key.classList.add("shift"), key.innerHTML = "Shift";
+            placeKey[3].appendChild(key);
+            key.appendChild(span);
         }
         for(let i = 0; i < 9; i++) {
-            btn = document.createElement("div");
-            btn.classList.add("btn");
-            btn.classList.add("specBtn");
-            if(i === 3) btn.classList.add("space"), btn.classList.remove("specBtn");
-            if(i === 0) btn.innerHTML = "Ctrl";
-            if(i === 1) btn.classList.add("win"), btn.innerHTML = "Win";
-            if(i === 8) btn.innerHTML = "Ctrl";
-            placeBtn[4].appendChild(btn);
+            key = document.createElement("div");
+            key.classList.add("key");
+            span = document.createElement("span");
+            key.classList.add("specKey");
+            if(i === 0) key.innerHTML = "Ctrl";
+            if(i === 1) key.classList.add("win"), key.innerHTML = "Win";
+            if(i === 2) key.classList.add("alt"), key.innerHTML = "Alt";
+            if(i === 3) key.classList.add("space"), key.classList.remove("specKey");
+            if(i === 4) key.classList.add("alt"), key.innerHTML = "Alt";
+            if(i === 5 || i === 6 || i === 7) key.classList.add("arrow");
+            console.log(arrow[0])
+            if(i === 8) key.innerHTML = "Ctrl";
+            placeKey[4].appendChild(key);
+            key.appendChild(span);
         }
     })();
-
-    let rus = document.createElement("span");
-    Array.from(document.querySelectorAll(".btn")).forEach(e => {
-        rus.classList.add("rus");
-        e.appendChild(rus);
-    })      
-};
+}
