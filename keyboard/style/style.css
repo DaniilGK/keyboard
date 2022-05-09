@@ -8,5 +8,121 @@
   transition: .2s;
   font-family: 'Roboto Flex', sans-serif;
   color: #FFFFFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.textarea {
+  display: block;
+  margin: 100px auto 0;
+  padding: 20px;
+  width: 90%;
+  height: 250px;
+  font-size: 18pt;
+  color: #000;
+  resize: none;
+}
+
+.keyboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin: auto;
+  padding: 5px;
+  width: 900px;
+  height: 380px;
+  background: #000;
+  border-radius: 6px;
+  border: 5px solid gray;
+}
+
+.keyboard .keyboardRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 76px;
+}
+
+.keyboard .keyboardRow .key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 64.28571px;
+  height: 100%;
+  border-radius: 10px;
+  background: #505050;
+}
+
+.keyboard .keyboardRow .key:hover {
+  background: #254d74;
+}
+
+.keyboard .keyboardRow .specKey {
+  outline: 2px solid #FFFFFF;
+}
+
+.keyboard .keyboardRow .backspace {
+  width: 180.57142px;
+}
+
+.keyboard .keyboardRow .tab {
+  width: 80px;
+}
+
+.keyboard .keyboardRow .del {
+  width: 80px;
+}
+
+.keyboard .keyboardRow .capsL {
+  width: 95px;
+}
+
+.keyboard .keyboardRow .enter {
+  width: 160.57142px;
+}
+
+.keyboard .keyboardRow .shift {
+  width: 160.57142px;
+}
+
+.keyboard .keyboardRow .ctrl {
+  width: 80px;
+}
+
+.keyboard .keyboardRow .space {
+  width: 395px;
 }
 /*# sourceMappingURL=style.css.map */
