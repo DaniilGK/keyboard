@@ -75,6 +75,7 @@ $wideBtn: 160.57142px;
         }
         .tab {
             width: $narrowerBtn;  
+            pointer-events: none;
         }
         .del {
             width: $narrowerBtn;
@@ -102,6 +103,9 @@ $wideBtn: 160.57142px;
         }
         .arrow {
 
+        }
+        .active-key {
+            background: red;
         }
     }
 }

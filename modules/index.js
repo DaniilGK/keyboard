@@ -1,8 +1,11 @@
 import { generationElem } from "./createElement.js";
-generationElem();
-
+import {addClassAllElements} from "./addClass.js";
 import {assignKeys} from "./assignKey.js";
+
+generationElem();
+addClassAllElements();
 assignKeys();
+
 
 function getCharCode() {
     let allKey = Array.from(document.querySelectorAll(".key"));
@@ -15,7 +18,3 @@ function getCharCode() {
     })
 }
 getCharCode()
-
-function clickKey() {
-
-}
