@@ -100,6 +100,7 @@
 
 .keyboard .keyboardRow .tab {
   width: 80px;
+  pointer-events: none;
 }
 
 .keyboard .keyboardRow .del {
@@ -124,5 +125,9 @@
 
 .keyboard .keyboardRow .space {
   width: 395px;
+}
+
+.keyboard .keyboardRow .active-key {
+  background: red;
 }
 /*# sourceMappingURL=style.css.map */
