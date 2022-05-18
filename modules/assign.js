@@ -62,6 +62,11 @@ export function assign() {
             if(!el.classList.contains("specKey")) {
                 textarea.value += el.children[0].innerText;
             }
+
+            if(set.has("Backspace")) {
+                console.log(textarea.value.slice(0, textarea.value.length - 1))
+                textarea.value = textarea.value.slice(0, textarea.value.length - 1);
+            }
     })
     //ALL EVENTS KEY UPP!!!!!!!!!!!!!
 
