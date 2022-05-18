@@ -1,9 +1,9 @@
-export let wrapper = document.createElement("div");
-export let textarea = document.createElement("textarea");
-export let keyboard = document.createElement("div");
+export const wrapper = document.createElement("div");
+export const textarea = document.createElement("textarea");
+export const keyboard = document.createElement("div");
 export let allKeyboardRow;
 
-export function generationElem() {
+export function generationElem() { 
     document.querySelector("body").appendChild(wrapper);
     wrapper.appendChild(textarea);
     wrapper.appendChild(keyboard); 
