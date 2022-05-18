@@ -2,7 +2,6 @@ import { wrapper } from "./createElement.js";
 import { textarea } from "./createElement.js";
 import { keyboard } from "./createElement.js";
 import { allKeyboardRow } from "./createElement.js";
-import { ID } from "./consts.js";
 
 export function addClassAllElements() {
     wrapper.classList.add("wrapper");

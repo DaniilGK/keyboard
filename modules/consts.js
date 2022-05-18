@@ -52,16 +52,17 @@ export let en = {
     "Comma": ",",
     "Period": ".",
     "Slash": "/",
-    "ArrowUp": "ArrowUp",
+    "ArrowUp": "🠕",
     "ShiftRight": "Shift",
     "ControlLeft": "Control",
     "MetaLeft": "Meta",
     "AltLeft": "Alt",
     "AltRight": "Alt",
-    "ArrowLeft": "ArrowLeft",
-    "ArrowDown": "ArrowDown",
-    "ArrowRight": "ArrowRight",
-    "ControlRight": "Control"
+    "ArrowLeft": "🠔",
+    "ArrowDown": "🠗",
+    "ArrowRight": "🠖",
+    "ControlRight": "Control",
+    "Space": "Space",
 }
 
 export let ru = {
@@ -122,12 +123,13 @@ export let ru = {
     "ControlLeft": "Control",
     "MetaLeft": "Meta",
     "AltLeft": "Alt",
-    "AltRight": "AltGraph",
-    "ArrowLeft": "ArrowLeft",
-    "ArrowUp": "ArrowUp",
-    "ArrowDown": "ArrowDown",
-    "ArrowRight": "ArrowRight",
+    "AltRight": "Alt",
+    "ArrowLeft": "🠔",
+    "ArrowUp": "🠕",
+    "ArrowDown": "🠗",
+    "ArrowRight": "🠖",
     "ControlRight": "Control",
+    "Space": "Space",
 }
 
 export let ID = [
