@@ -18,7 +18,10 @@ export function assign() {
 
     //ADD VALUE KEYS
     for(let i = 0; i < allKey.length; i++) {
-        allKey[i].children[0].innerText = en[allKey[i].id];   
+        if(i < 13) allKey[i].children[0].innerText = Object.values(en)[i].onShift;
+        else {
+            allKey[i].children[0].innerText = en[allKey[i].id];
+        }      
     }
 
     //ALL EVENTS KEY UPP!!!!!!!!!!!!!
@@ -39,11 +42,20 @@ export function assign() {
 
             if(languageChange === 1) {
                 for(let i = 0; i < allKey.length; i++) {
-                    allKey[i].children[0].innerText = ru[allKey[i].id];   
+                    allKey[i].children[0].innerText = ru[allKey[i].id]; 
+                    if(i > 0 && i < 13) {
+                        allKey[i].children[0].innerText = Object.values(ru)[i].onShift;
+                    } else {
+                        allKey[i].children[0].innerText = ru[allKey[i].id]; 
+                    }  
                 }
             } else {
                 for(let i = 0; i < allKey.length; i++) {
-                    allKey[i].children[0].innerText = en[allKey[i].id];   
+                    if(i < 13) {
+                        allKey[i].children[0].innerText = Object.values(en)[i].onShift;
+                    } else {
+                        allKey[i].children[0].innerText = en[allKey[i].id]; 
+                    }    
                 }
             }
         }
@@ -64,7 +76,6 @@ export function assign() {
             }
 
             if(set.has("Backspace")) {
-                console.log(textarea.value.slice(0, textarea.value.length - 1))
                 textarea.value = textarea.value.slice(0, textarea.value.length - 1);
             }
     })
@@ -142,6 +153,7 @@ export function assign() {
             allKey.forEach(e => {
                 if(!e.classList.contains("specKey")) {
                     e.children[0].innerHTML = e.children[0].innerHTML.toLowerCase();
+                    keyShift();
                 }         
             })
         }
@@ -150,6 +162,7 @@ export function assign() {
             allKey.forEach(e => {
                 if(!e.classList.contains("specKey")) {
                     e.children[0].innerHTML = e.children[0].innerHTML.toUpperCase();
+                    keyShift();
                 }         
             })
         }
@@ -158,5 +171,29 @@ export function assign() {
         if(caps === true && shift === false) UPPERCASE();
         if(caps === false && shift === true) UPPERCASE();
         if(caps === false && shift === false) LOWERCASE();
+    }
+
+    function keyShift() {
+        if(isShift === true) {
+            if(languageChange === 1) {
+                for(let i = 1; i < 13; i++) {
+                    allKey[i].children[0].innerText = Object.values(ru)[i].activShift;
+                }
+            } else {
+                for(let i = 0; i < 13; i++) {
+                    allKey[i].children[0].innerText = Object.values(en)[i].activShift;
+                }
+            }
+        } else {
+            if(languageChange === 1) {
+                for(let i = 1; i < 13; i++) {
+                    allKey[i].children[0].innerText = Object.values(ru)[i].onShift;
+                }
+            } else {
+                for(let i = 0; i < 13; i++) {
+                    allKey[i].children[0].innerText = Object.values(en)[i].onShift;
+                }
+            }
+        }
     }
 }

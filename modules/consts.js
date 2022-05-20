@@ -1,17 +1,56 @@
 export let en = {
-    "Backquote": "`",
-    "Digit1": "1",
-    "Digit2": "2",
-    "Digit3": "3",
-    "Digit4": "4",
-    "Digit5": "5",
-    "Digit6": "6",
-    "Digit7": "7",
-    "Digit8": "8",
-    "Digit9": "9",
-    "Digit0": "0",
-    "Minus": "-",
-    "Equal": "=",
+    "Backquote": {
+        "onShift": "`",
+        "activShift": "~",
+    },
+    "Digit1": {
+        "onShift": "1",
+        "activShift": "!",
+    },
+    "Digit2": {
+        "onShift": "2",
+        "activShift": "@",
+    },
+    "Digit3": {
+        "onShift": "3",
+        "activShift": "#",
+    },
+    "Digit4": {
+        "onShift": "4",
+        "activShift": "$",
+    },
+    "Digit5": {
+        "onShift": "5",
+        "activShift": "%",
+    },
+    "Digit6": {
+        "onShift": "6",
+        "activShift": "^",
+    },
+    "Digit7": {
+        "onShift": "7",
+        "activShift": "&",
+    },
+    "Digit8": {
+        "onShift": "8",
+        "activShift": "*",
+    },
+    "Digit9": {
+        "onShift": "9",
+        "activShift": "(",
+    },
+    "Digit0": {
+        "onShift": "0",
+        "activShift": ")",
+    },
+    "Minus": {
+        "onShift": "-",
+        "activShift": "_",
+    },
+    "Equal": {
+        "onShift": "=",
+        "activShift": "+",
+    },
     "Backspace": "Backspace",
     "Tab": "Tab",
     "KeyQ": "q",
@@ -67,18 +106,54 @@ export let en = {
 
 export let ru = {
     "Backquote": "ё",
-    "Digit1": "1",
-    "Digit2": "2",
-    "Digit3": "3",
-    "Digit4": "4",
-    "Digit5": "5",
-    "Digit6": "6",
-    "Digit7": "7",
-    "Digit8": "8",
-    "Digit9": "9",
-    "Digit0": "0",
-    "Minus": "-",
-    "Equal": "=",
+    "Digit1": {
+        "activShift": "!",
+        "onShift": "1",
+    },
+    "Digit2": {
+        "activShift": ",",
+        "onShift": "2",
+    },
+    "Digit3": {
+        "activShift": "№",
+        "onShift": "3",
+    },
+    "Digit4": {
+        "activShift": ";",
+        "onShift": "4",
+    },
+    "Digit5": {
+        "activShift": "%",
+        "onShift": "5",
+    },
+    "Digit6": {
+        "activShift": ":",
+        "onShift": "6",
+    },
+    "Digit7": {
+        "activShift": "?",
+        "onShift": "7",
+    },
+    "Digit8": {
+        "activShift": "*",
+        "onShift": "8",
+    },
+    "Digit9": {
+        "activShift": "(",
+        "onShift": "9",
+    },
+    "Digit0": {
+        "activShift": ")",
+        "onShift": "0",
+    },
+    "Minus": {
+        "activShift": "_",
+        "onShift": "-",
+    },
+    "Equal": {
+        "activShift": "+",
+        "onShift": "=",
+    },
     "Backspace": "Backspace",
     "Tab": "Tab",
     "KeyQ": "й",
