@@ -104,7 +104,6 @@
 
 .keyboard .keyboardRow .tab {
   width: 80px;
-  pointer-events: none;
 }
 
 .keyboard .keyboardRow .del {
