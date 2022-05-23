@@ -24,7 +24,9 @@ export function assign() {
         }      
     }
 
-    //ALL EVENTS KEY UPP!!!!!!!!!!!!!
+    let caps = document.querySelector(".capsL");
+
+    //ALL EVENTS KEY DOWN!!!!!!!!!!!!!
     window.addEventListener("keydown", function(event) {
         set.add(event.code);
         
@@ -62,7 +64,7 @@ export function assign() {
         switchLang()
 
             if(set.has("CapsLock")) {
-                el.classList.toggle("active-capsL");
+                caps.classList.toggle("active-capsL");
                 isCapsL = isCapsL === false ? true : false;
             }
 
@@ -83,7 +85,7 @@ export function assign() {
                 textarea.value = textarea.value + " ";
             }
     })
-    //ALL EVENTS KEY UPP!!!!!!!!!!!!!
+    //ALL EVENTS KEY DOWN!!!!!!!!!!!!!
 
     
     //WRITE TO TEXAREA
@@ -99,7 +101,7 @@ export function assign() {
                 }
 
                 if(set.has("CapsLock")) {
-                    el.classList.toggle("active-capsL");
+                    caps.classList.toggle("active-capsL");
                     isCapsL = isCapsL === false ? true : false;
                 }
     
@@ -134,7 +136,7 @@ export function assign() {
         })
     //WRITE TO TEXAREA STOP
 
-    //ALL EVENT KEY DOWN !!!!!!!!!!!
+    //ALL EVENT KEY UP !!!!!!!!!!!
     window.addEventListener("keyup", function(event) {
         set.delete(event.code)
 
@@ -149,7 +151,7 @@ export function assign() {
         }
         updateKeyboardByUppercase({caps : isCapsL, shift : isShift});
     })
-    //ALL EVENT KEY DOWN STOP!!!!!!!!!!!
+    //ALL EVENT KEY UP STOP!!!!!!!!!!!
 
     //UPPER CHARACTER
     function updateKeyboardByUppercase({caps, shift}) {
