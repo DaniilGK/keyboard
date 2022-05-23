@@ -66,7 +66,7 @@ export function assign() {
                 isCapsL = isCapsL === false ? true : false;
             }
 
-            if(set.has("ShiftLeft")) {
+            if(set.has("ShiftLeft") || set.has("ShiftRight")) {
                 isShift = true;
             }
             updateKeyboardByUppercase({caps : isCapsL, shift : isShift})
@@ -77,6 +77,10 @@ export function assign() {
 
             if(set.has("Backspace")) {
                 textarea.value = textarea.value.slice(0, textarea.value.length - 1);
+            }
+
+            if(set.has("Space")) {
+                textarea.value = textarea.value + " ";
             }
     })
     //ALL EVENTS KEY UPP!!!!!!!!!!!!!
@@ -99,7 +103,7 @@ export function assign() {
                     isCapsL = isCapsL === false ? true : false;
                 }
     
-                if(set.has("ShiftLeft")) {
+                if(set.has("ShiftLeft") || set.has("ShiftRight")) {
                     isShift = true;
                 }
                 updateKeyboardByUppercase({caps : isCapsL, shift : isShift})
@@ -140,7 +144,7 @@ export function assign() {
             el.classList.remove("active-key")
         }
 
-        if(event.code === "ShiftLeft") {
+        if(event.code === "ShiftLeft" || event.code === "ShiftRight") {
             isShift = false;
         }
         updateKeyboardByUppercase({caps : isCapsL, shift : isShift});
