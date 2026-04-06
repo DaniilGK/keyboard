@@ -1,4 +1,10 @@
-export let en = {
+export const wrapper = document.createElement("div");
+export const textarea = document.createElement("textarea");
+export const keyboard = document.createElement("div");
+
+export const ROW_KEY_COUNTS = [14, 15, 13, 13, 9];
+
+export const en = {
     "Backquote": {
         "onShift": "`",
         "activShift": "~",
@@ -104,7 +110,7 @@ export let en = {
     "Space": "Space",
 }
 
-export let ru = {
+export const ru = {
     "Backquote": "ё",
     "Digit1": {
         "activShift": "!",
@@ -273,3 +279,23 @@ export let ID = [
     "ArrowRight",
     "ControlRight"
 ]
+
+export const SPECIAL_KEY_CLASSES_BY_CODE = {
+    Backspace: ["specKey", "backspace"],
+    Tab: ["specKey", "tab"],
+    Delete: ["specKey", "del"],
+    CapsLock: ["specKey", "capsL"],
+    Enter: ["specKey", "enter"],
+    ShiftLeft: ["specKey", "shift"],
+    ShiftRight: ["specKey", "shift"],
+    ControlLeft: ["specKey", "ctrl"],
+    ControlRight: ["specKey", "ctrl"],
+    MetaLeft: ["specKey", "win"],
+    AltLeft: ["specKey", "alt"],
+    AltRight: ["specKey", "alt"],
+    Space: ["specKey", "space"],
+    ArrowLeft: ["specKey", "arrow"],
+    ArrowUp: ["specKey", "arrow"],
+    ArrowDown: ["specKey", "arrow"],
+    ArrowRight: ["specKey", "arrow"],
+};

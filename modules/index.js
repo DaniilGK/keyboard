@@ -1,7 +1,7 @@
-import { generationElem } from "./createElement.js";
-import {addClassAllElements} from "./addClass.js";
-import {assign} from "./assign.js";
+import { createElements } from "./createElements.js";
+import { initKeys } from "./initKeys.js";
+import { attachEventListeners } from "./functions.js";
 
-generationElem();
-addClassAllElements();
-assign();
+const dom = createElements();
+const state = initKeys(dom);
+attachEventListeners(state);
