@@ -2,139 +2,105 @@
 * {
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  list-style-type: none;
-  -webkit-transition: .2s;
-  transition: .2s;
-  font-family: 'Roboto Flex', sans-serif;
+  box-sizing: border-box;
+  transition: 0.2s;
+  font-family: "Roboto Flex", sans-serif;
   color: #FFFFFF;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
+body {
+  background-color: #01004a;
+}
+
 .wrapper {
-  max-width: 1200px;
+  max-width: 56.25rem;
   margin: 0 auto;
-  padding: 0 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 0 1.25rem;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 40px;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 0 0.625rem;
+  }
 }
 
 .textarea {
-  display: block;
-  margin: 100px auto 0;
-  padding: 20px;
-  width: 90%;
-  height: 250px;
-  font-size: 18pt;
+  width: 100%;
+  height: 6.25rem;
+  margin-top: 2.5rem;
+  padding: 0.9375rem;
+  font-size: 1.25rem;
   color: #000;
   resize: none;
+  border-radius: 0.5rem;
 }
 
 .keyboard {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  margin: auto;
-  padding: 5px;
-  width: 900px;
-  height: 380px;
-  background: #000;
-  border-radius: 6px;
-  border: 5px solid gray;
-}
-
-.keyboard .keyboardRow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
-  padding: 5px;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
-  height: 76px;
+  max-width: 56.25rem;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.625rem;
+  background: #000;
+  border-radius: 0.625rem;
+  border: 0.3125rem solid gray;
 }
-
-.keyboard .keyboardRow .key {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.keyboard .keyboardRow {
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 64.28571px;
-  height: 100%;
-  border-radius: 10px;
-  background: #505050;
+  gap: 0.3125rem;
+  width: 100%;
+  height: 3.75rem;
 }
-
+@media (max-width: 576px) {
+  .keyboard .keyboardRow {
+    height: 2.8125rem;
+  }
+}
+.keyboard .keyboardRow .key {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(80, 80, 80);
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
 .keyboard .keyboardRow .key:hover {
   outline: 2px solid red;
 }
-
-.keyboard .keyboardRow span {
-  pointer-events: none;
+.keyboard .keyboardRow .key.active-key {
+  background: red;
 }
-
-.keyboard .keyboardRow .specKey {
-  outline: 2px solid #FFFFFF;
-}
-
 .keyboard .keyboardRow .backspace {
-  width: 180.57142px;
+  flex: 2;
 }
-
-.keyboard .keyboardRow .tab {
-  width: 80px;
+.keyboard .keyboardRow .tab, .keyboard .keyboardRow .del, .keyboard .keyboardRow .capsL {
+  flex: 1.5;
 }
-
-.keyboard .keyboardRow .del {
-  width: 80px;
+.keyboard .keyboardRow .enter, .keyboard .keyboardRow .shift {
+  flex: 2.2;
 }
-
-.keyboard .keyboardRow .capsL {
-  width: 95px;
-}
-
-.keyboard .keyboardRow .active-capsL {
-  background: red;
-}
-
-.keyboard .keyboardRow .enter {
-  width: 160.57142px;
-}
-
-.keyboard .keyboardRow .shift {
-  width: 160.57142px;
-}
-
-.keyboard .keyboardRow .ctrl {
-  width: 80px;
-}
-
 .keyboard .keyboardRow .space {
-  width: 395px;
+  flex: 5;
 }
 
-.keyboard .keyboardRow .active-key {
-  background: red;
-}
-/*# sourceMappingURL=style.css.map */
+@media (max-height: 500px) and (orientation: landscape) {
+  .wrapper {
+    gap: 0.625rem;
+  }
+  .textarea {
+    height: 3.75rem;
+    margin-top: 0.625rem;
+  }
+  .keyboard .keyboardRow {
+    height: 2.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */

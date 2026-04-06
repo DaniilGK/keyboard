@@ -1,116 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
+@function rem($px) {
+    @return $px / 16 + rem;
+}
+
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
-    list-style-type: none; 
+    box-sizing: border-box;
     transition: .2s;
     font-family: 'Roboto Flex', sans-serif;
     color: #FFFFFF;
     user-select: none;
 }
 
+body {
+    background-color:#01004a;
+}
+
+$keyboard-max-w: rem(900);
+$keyboard-bg: #000;
+$key-bg: rgb(80, 80, 80);
+
+@mixin mq($siye) {
+    @if $siye == "tablet" { @media (max-width: 992px) { @content; } }
+    @if $siye == "mobile" { @media (max-width: 576px) { @content; } }
+    @if $siye == "landscape" { @media (max-height: 500px) and (orientation: landscape) { @content; } }
+}
+
 .wrapper {
-    max-width: 1200px;
+    max-width: $keyboard-max-w;
     margin: 0 auto;
-    padding: 0 70px;
+    padding: 0 rem(20);
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: rem(20);
+
+    @include mq("mobile") {
+        padding: 0 rem(10);
+    }
 }
 
 .textarea {
-    display: block;
-    margin: 100px auto 0;
-    padding: 20px;
-    width: 100% - 10;
-    height: 250px;
-    font-size: 18pt;
+    width: 100%;
+    height: rem(100);
+    margin-top: rem(40);
+    padding: rem(15);
+    font-size: rem(20);
     color: #000;
     resize: none;
+    border-radius: rem(8);
 }
 
-$keyboardW: 900px;
-$keyboardH: 380px;
-
-$narrowerBtn: 80px;
-$wideBtn: 160.57142px;
-
 .keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  width: 100%; // Клавиатура тянется по родителю
+  max-width: $keyboard-max-w;
+  height: auto; // Высота зависит от контента
+  margin: 0 auto;
+  padding: rem(10);
+  background: $keyboard-bg;
+  border-radius: rem(10);
+  border: rem(5) solid gray;
+
+  .keyboardRow {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin: auto;
-    padding: 5px;
-    width: $keyboardW;
-    height: $keyboardH;
-    background: #000;
-    border-radius: 6px;
-    border: 5px solid gray;
-    .keyboardRow {
-        display: flex;
-        gap: 5px;
-        padding: 5px;
-        width: 100%;
-        height: $keyboardH / 5;
-        .key {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: $keyboardW / 14;
-            height: 100%;
-            border-radius: 10px;
-            background: rgb(80, 80, 80);
-            &:hover {
-                outline: 2px solid red;
-            }
-        }
-        span {
-            pointer-events: none;
-        }
-        .specKey {
-            outline: 2px solid #FFFFFF;
-        }
-        .backspace {
-            width: $wideBtn + 20;
-        }
-        .tab {
-            width: $narrowerBtn;  
-        }
-        .del {
-            width: $narrowerBtn;
-        }
-        .capsL {
-            width: $narrowerBtn + 15;
-        }
-        .active-capsL {
-            background: red;
-        }
-        .enter {
-            width: $wideBtn;
-        }
-        .shift {
-            width: $wideBtn;
-        }
-        .ctrl {
-            width: $narrowerBtn;
-        }
-        .win {
-            
-        }
-        .alt {
+    gap: rem(5);
+    width: 100%;
+    height: rem(60);
 
-        }
-        .space {
-            width: 395px;
-        }
-        .arrow {
-
-        }
-        .active-key {
-            background: red;
-        }
+    @include mq("mobile") {
+       height: rem(45);
     }
+
+    .key {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $key-bg;
+      border-radius: rem(6);
+      cursor: pointer;
+
+      &:hover { outline: 2px solid red; }
+      &.active-key { background: red; }
+    }
+
+    // Специальные кнопки используем flex-grow для пропорций
+    .backspace { flex: 2; }
+    .tab, .del, .capsL { flex: 1.5; }
+    .enter, .shift { flex: 2.2; }
+    .space { flex: 5; }
+  }
+}
+
+@include mq("landscape") {
+  .wrapper {
+    gap: rem(10);
+  }
+  .textarea {
+    height: rem(60);
+    margin-top: rem(10);
+  }
+  .keyboard {
+    .keyboardRow {
+      height: rem(40); 
+    }
+  }
 }
